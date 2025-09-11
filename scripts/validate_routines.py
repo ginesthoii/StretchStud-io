@@ -30,9 +30,9 @@ def validate_file(filepath):
         with open(filepath, "r") as f:
             data = json.load(f)
         validate(instance=data, schema=routine_schema)
-        print(f"✅ {filepath} is valid")
+        print(f"✔ {filepath} is valid")
     except (json.JSONDecodeError, ValidationError) as e:
-        print(f"❌ {filepath} is invalid: {e}")
+        print(f"✗ {filepath} is invalid: {e}")
 
 if __name__ == "__main__":
     routines_dir = "routines"
